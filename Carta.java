@@ -8,8 +8,13 @@ public class Carta {
         Verd
     }
 
-    private int numero;
-    private Color color;
+    private final int numero;
+    private final Color color;
+
+    public Carta (int num, Color col){
+        numero = num;
+        color = col;
+    }
 
     public int getNumero() {return numero;}
     public Color getColor() {return color;}
