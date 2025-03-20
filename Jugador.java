@@ -6,8 +6,8 @@ public class Jugador {
     private final String nom;
     private ArrayList<Carta> cartes;
 
-    public Jugador (String n){
-        nom = n;
+    public Jugador (String nomJugador){
+        nom = nomJugador;
         cartes = new ArrayList<>();
     }
 
