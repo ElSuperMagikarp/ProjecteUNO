@@ -13,4 +13,8 @@ public class Jugador {
 
     public String getNom(){return nom;}
     public ArrayList<Carta> getCartes(){return cartes;}
+
+    public void addCarta(Carta carta){
+        cartes.add(carta);
+    }
 }
