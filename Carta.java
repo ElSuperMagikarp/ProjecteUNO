@@ -1,13 +1,6 @@
 package UNO;
 
 public class Carta {
-    public enum Color{
-        Groc,
-        Vermell,
-        Blau,
-        Verd
-    }
-
     private final int numero;
     private final Color color;
 
