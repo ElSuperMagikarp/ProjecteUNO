@@ -27,7 +27,7 @@ public class Mazo {
     }
 
     public void reiniciar(Pilo pilo) {
-        Carta primeraCarta = pilo.getCartes().pop();
+        Carta primeraCarta = pilo.agafarCarta();
         while (!pilo.getCartes().empty()){
             cartes.push(pilo.agafarCarta());
         }
