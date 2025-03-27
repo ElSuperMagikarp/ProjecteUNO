@@ -9,16 +9,13 @@ public class Pilo {
         cartes = new Stack<>();
     }
 
-    public Stack<Carta> getCartes() {
-        return cartes;
-    }
+    public Stack<Carta> getCartes() { return cartes; }
+
+    public Carta consultarCarta(Carta carta){ return cartes.peek(); }
 
     public void addCarta(Carta carta){
         cartes.push(carta);
     }
 
-    public boolean validarCarta(Carta carta){
-        Carta ultimaCarta = cartes.peek();
-        return carta.getColor() == ultimaCarta.getColor() || carta.getNumero() == ultimaCarta.getNumero();
-    }
+    public Carta agafarCarta() { return cartes.pop(); }
 }

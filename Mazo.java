@@ -29,7 +29,7 @@ public class Mazo {
     public void reiniciar(Pilo pilo) {
         Carta primeraCarta = pilo.getCartes().pop();
         while (!pilo.getCartes().empty()){
-            cartes.push(pilo.getCartes().pop());
+            cartes.push(pilo.agafarCarta());
         }
         pilo.addCarta(primeraCarta);
         barrejar();
