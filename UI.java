@@ -8,7 +8,9 @@ public class UI {
     public static final String RED = "\u001B[31m"; 
     public static final String GREEN = "\u001B[32m"; 
     public static final String YELLOW = "\u001B[33m"; 
-    public static final String BLUE = "\u001B[34m"; 
+    public static final String BLUE = "\u001B[34m";
+
+    private static final int ALTURA_CARTA = 7;
 
     private static String pintarCarta(Carta carta) {
         String color = "";
@@ -61,7 +63,7 @@ public class UI {
             cartesPintades[i] = pintarCarta(cartes.get(i)).split("\n");
         }
     
-        int altura = cartesPintades[0].length;
+        int altura = ALTURA_CARTA;
     
         for (int i = 0; i < altura; i++) {
             for (int j = 0; j < quantitat; j++) {
