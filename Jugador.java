@@ -19,9 +19,7 @@ public class Jugador {
     }
 
     public void tirarCarta(Carta carta, Pilo pilo){
-        if (pilo.validarCarta(carta)) {
-            cartes.remove(carta);
-            pilo.addCarta(carta);
-        }
+        cartes.remove(carta);
+        pilo.addCarta(carta);
     }
 }
