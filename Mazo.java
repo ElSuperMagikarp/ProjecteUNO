@@ -18,8 +18,8 @@ public class Mazo {
         }
     }
 
-    public ArrayList<Carta> getCartes() {
-        return new ArrayList<>(cartes);
+    public Stack<Carta> getCartes() {
+        return cartes;
     }
 
     public Carta agafarCarta() {
