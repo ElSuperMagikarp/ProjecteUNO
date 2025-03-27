@@ -6,7 +6,7 @@ public class Jugador {
     private final String nom;
     private ArrayList<Carta> cartes;
 
-    public Jugador (String nomJugador){
+    public Jugador(String nomJugador) {
         nom = nomJugador;
         cartes = new ArrayList<>();
     }
@@ -16,5 +16,12 @@ public class Jugador {
 
     public void addCarta(Carta carta){
         cartes.add(carta);
+    }
+
+    public void tirarCarta(Carta carta, Pilo pilo){
+        if (pilo.validarCarta(carta)) {
+            cartes.remove(carta);
+            pilo.addCarta(carta);
+        }
     }
 }
