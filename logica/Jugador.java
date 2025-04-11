@@ -14,12 +14,16 @@ public class Jugador {
     public String getNom(){return nom;}
     public ArrayList<Carta> getCartes(){return cartes;}
 
-    public void addCarta(Carta carta){
-        cartes.add(carta);
+    public int nombreDeCartes() {
+        return cartes.size();
     }
 
-    public void tirarCarta(Carta carta, Pilo pilo){
+    public void tirarCarta(Carta carta, Pilo pilo) {
         cartes.remove(carta);
         pilo.addCarta(carta);
+    }
+
+    public void robaCarta(Mazo mazo) {
+        cartes.add(mazo.agafarCarta());
     }
 }
