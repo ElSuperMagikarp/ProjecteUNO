@@ -1,7 +1,6 @@
 package uno.interficie;
 
 import uno.logica.Carta;
-import uno.logica.Color;
 
 import java.util.ArrayList;
 
@@ -18,16 +17,16 @@ public class UI {
     private static String pintarCarta(Carta carta) {
         String color = "";
         switch (carta.getColor()) {
-            case Color.Groc:
+            case Carta.Color.Groc:
                 color = YELLOW;
                 break;
-            case Color.Vermell:
+            case Carta.Color.Vermell:
                 color = RED;
                 break;
-            case Color.Blau:
+            case Carta.Color.Blau:
                 color = BLUE;
                 break;
-            case Color.Verd:
+            case Carta.Color.Verd:
                 color = GREEN;
                 break;
             default:

@@ -8,7 +8,7 @@ public class Mazo {
 
     public Mazo() {
         cartes = new Stack<>();
-        for (Color color : Color.values()) {
+        for (Carta.Color color : Carta.Color.values()) {
             cartes.push(new Carta(0,color));
             for (int i=1; i<=9; i++){
                 cartes.push(new Carta(i,color));
