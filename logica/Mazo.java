@@ -17,6 +17,8 @@ public class Mazo {
         }
     }
 
+    public boolean esBuid() {return cartes.isEmpty();}
+
     public Stack<Carta> getCartes() {
         return cartes;
     }
