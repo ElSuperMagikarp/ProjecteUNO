@@ -1,4 +1,9 @@
-package UNO;
+package uno;
+
+import uno.interficie.UI;
+import uno.logica.Jugador;
+import uno.logica.Mazo;
+import uno.logica.Pilo;
 
 import java.util.ArrayList;
 

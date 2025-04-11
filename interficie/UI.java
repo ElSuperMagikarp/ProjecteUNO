@@ -1,4 +1,7 @@
-package UNO;
+package uno.interficie;
+
+import uno.logica.Carta;
+import uno.logica.Color;
 
 import java.util.ArrayList;
 

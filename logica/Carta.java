@@ -1,4 +1,4 @@
-package UNO;
+package uno.logica;
 
 public class Carta {
     private final int numero;
