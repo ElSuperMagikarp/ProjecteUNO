@@ -11,7 +11,7 @@ public class OrdreJugadors {
         jugadors = new LinkedList<>();
     }
 
-    public Jugador getJugadorActiuIndex() { return jugadors.get(jugadorActiuIndex); }
+    public Jugador getJugadorActiu() { return jugadors.get(jugadorActiuIndex); }
 
     public void crearJugador(String nomJugador) {
         jugadors.add(new Jugador(nomJugador));
