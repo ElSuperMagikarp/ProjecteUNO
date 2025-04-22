@@ -26,4 +26,15 @@ public class Jugador {
     public void robaCarta(Mazo mazo) {
         cartes.add(mazo.agafarCarta());
     }
+
+    public boolean potTirarCarta(Pilo pilo) {
+        boolean jugadorPotTirar = false;
+        Carta ultimaCarta = pilo.consultarCarta();
+        for (Carta carta : cartes) {
+            if (Regles.sonCartesCompatibles(carta, ultimaCarta)){
+                jugadorPotTirar = true;
+            }
+        }
+        return jugadorPotTirar;
+    }
 }
