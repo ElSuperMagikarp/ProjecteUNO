@@ -11,7 +11,7 @@ public class Pilo {
 
     public Stack<Carta> getCartes() { return cartes; }
 
-    public Carta consultarCarta(Carta carta){ return cartes.peek(); }
+    public Carta consultarCarta(){ return cartes.peek(); }
 
     public void addCarta(Carta carta){
         cartes.push(carta);
