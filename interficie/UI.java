@@ -130,7 +130,7 @@ public class UI {
             if (indexCartaEscollida > 0 && indexCartaEscollida <= jugador.nombreDeCartes()) {
                 Carta cartaEscollida = jugador.getCartes().get(indexCartaEscollida-1);
 
-                if (Regles.sonCartesCompatibles(cartaEscollida, pilo.consultarCarta())){
+                if (cartaEscollida.sonCartesCompatibles(pilo.consultarCarta())){
                     return cartaEscollida;
                 } else {
                     System.out.println("Aquesta carta no coincideix amb l'última del pilo!");

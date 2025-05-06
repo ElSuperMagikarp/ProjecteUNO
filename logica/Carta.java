@@ -18,4 +18,10 @@ public class Carta {
 
     public int getNumero() {return numero;}
     public Color getColor() {return color;}
+
+    public boolean sonCartesCompatibles(Carta carta) {
+        boolean colorsIguals = color == carta.getColor();
+        boolean numerosIguals = numero == carta.getNumero();
+        return colorsIguals || numerosIguals;
+    }
 }

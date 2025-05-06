@@ -31,7 +31,7 @@ public class Jugador {
         boolean jugadorPotTirar = false;
         Carta ultimaCarta = pilo.consultarCarta();
         for (Carta carta : cartes) {
-            if (Regles.sonCartesCompatibles(carta, ultimaCarta)){
+            if (ultimaCarta.sonCartesCompatibles(carta)){
                 jugadorPotTirar = true;
             }
         }
