@@ -1,8 +1,9 @@
 package uno.interficie;
 
 import uno.logica.*;
+import uno.logica.cartes.Carta;
+
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class UI {
@@ -34,22 +35,43 @@ public class UI {
             default:
                 break;
         }
-
-        String cartaPintada = String.format("""
+        String simbol = carta.getSimbol();
+        String cartaPintada;
+        if (simbol.length() > 1) {
+            cartaPintada = String.format("""
             %s┌─────────┐%s
-            %s│ %d       │%s
+            %s│ %s      │%s
             %s│         │%s
             %s│   UNO   │%s
             %s│         │%s
-            %s│       %d │%s
+            %s│      %s │%s
             %s└─────────┘%s""",
-            color, RESET,
-            color, carta.getNumero(), RESET,
-            color, RESET,
-            color, RESET,
-            color, RESET,
-            color, carta.getNumero(), RESET,
-            color, RESET);
+                    color, RESET,
+                    color, simbol, RESET,
+                    color, RESET,
+                    color, RESET,
+                    color, RESET,
+                    color, simbol, RESET,
+                    color, RESET);
+        } else {
+            cartaPintada = String.format("""
+            %s┌─────────┐%s
+            %s│ %s       │%s
+            %s│         │%s
+            %s│   UNO   │%s
+            %s│         │%s
+            %s│       %s │%s
+            %s└─────────┘%s""",
+                    color, RESET,
+                    color, simbol, RESET,
+                    color, RESET,
+                    color, RESET,
+                    color, RESET,
+                    color, simbol, RESET,
+                    color, RESET);
+        }
+
+
 
 
         return cartaPintada;
@@ -143,5 +165,60 @@ public class UI {
 
     public static void victoria(Jugador jugador) {
         System.out.println(jugador.getNom()+" ha guanyat la partida!");
+    }
+
+    // CARTES ESPECIALS
+    public static void jugadorPerdTorn(OrdreJugadors ordreJugadors) {
+        String jugadorPerdTorn = ordreJugadors.getJugadorActiu().getNom();
+        System.out.println(jugadorPerdTorn+" perd el torn!");
+    }
+
+    public static void chupaCartes(Jugador jugador, int quantitatCartes) {
+        String nomJugador = jugador.getNom();
+        if (quantitatCartes == 1) {
+            System.out.println(nomJugador+" chupa 1 carta");
+        } else {
+            System.out.println(nomJugador+" chupa "+quantitatCartes+" cartes!");
+        }
+    }
+
+    public static void invertirOrdre() {
+        System.out.println("ORDRE INVERTIT!");
+    }
+
+    public static Carta.Color demanarColor() {
+        System.out.print(YELLOW+"GROC (1) "+RESET);
+        System.out.print(RED+"VERMELL (2) "+RESET);
+        System.out.print(BLUE+"BLAU (3) "+RESET);
+        System.out.print(GREEN+"VERD (4) "+RESET);
+        System.out.println();
+
+        Carta.Color colorEscollit = Carta.Color.Incolor;
+        do {
+            System.out.print("Escull un color: ");
+            int indexColor = input.nextInt();
+
+            if (indexColor >= 1 && indexColor <= 4) {
+                switch (indexColor) {
+                    case 1:
+                        colorEscollit = Carta.Color.Groc;
+                        break;
+                    case 2:
+                        colorEscollit = Carta.Color.Vermell;
+                        break;
+                    case 3:
+                        colorEscollit = Carta.Color.Blau;
+                        break;
+                    case 4:
+                        colorEscollit = Carta.Color.Verd;
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                System.out.println("ERROR: Has escollit un color no vàlid");
+            }
+        } while (colorEscollit == Carta.Color.Incolor);
+        return colorEscollit;
     }
 }

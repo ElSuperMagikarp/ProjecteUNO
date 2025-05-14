@@ -1,5 +1,7 @@
 package uno.logica;
 
+import uno.logica.cartes.Carta;
+
 import java.util.ArrayList;
 
 public class Jugador {
@@ -21,6 +23,7 @@ public class Jugador {
     public void tirarCarta(Carta carta, Pilo pilo) {
         cartes.remove(carta);
         pilo.addCarta(carta);
+        carta.accio();
     }
 
     public void robaCarta(Mazo mazo) {

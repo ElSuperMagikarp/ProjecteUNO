@@ -2,6 +2,7 @@ package uno;
 
 import uno.interficie.*;
 import uno.logica.*;
+import uno.logica.cartes.Carta;
 
 import java.util.ArrayList;
 
@@ -10,9 +11,17 @@ public class Partida {
 
     private int quantitatJugadors;
 
-    Mazo mazo = new Mazo();
+    Mazo mazo = new Mazo(this);
     Pilo pilo = new Pilo();
     OrdreJugadors ordreJugadors = new OrdreJugadors();
+
+    public Mazo getMazo() {
+        return mazo;
+    }
+
+    public OrdreJugadors getOrdreJugadors() {
+        return ordreJugadors;
+    }
 
     public void jugar() {
         preparar();
@@ -32,6 +41,7 @@ public class Partida {
             ordreJugadors.crearJugador(nomJugador);
         }
         ordreJugadors.barrejarOrdre();
+        ordreJugadors.showOrdre();
 
         repartirCartes();
 

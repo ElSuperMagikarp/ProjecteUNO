@@ -1,5 +1,7 @@
 package uno.logica;
 
+import uno.logica.cartes.Carta;
+
 import java.util.Stack;
 
 public class Pilo {
