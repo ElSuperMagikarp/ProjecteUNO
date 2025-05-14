@@ -2,6 +2,7 @@ package uno.logica.cartes;
 
 import uno.Partida;
 import uno.interficie.UI;
+import uno.logica.OrdreJugadors;
 
 public class CartaCanviSentit extends Carta{
     public CartaCanviSentit(Color color, Partida partida) {
@@ -14,6 +15,12 @@ public class CartaCanviSentit extends Carta{
 
     @Override
     public void accio() {
-        partida.getOrdreJugadors().invertirOrdre();
+        OrdreJugadors ordreJugadors = partida.getOrdreJugadors();
+        if (ordreJugadors.getJugadorQuantity() > 2) {
+            ordreJugadors.invertirOrdre();
+        } else {
+            UI.invertirOrdre();
+            ordreJugadors.passarTorn();
+        }
     }
 }

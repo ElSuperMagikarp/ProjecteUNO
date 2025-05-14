@@ -16,6 +16,7 @@ public class OrdreJugadors {
     }
 
     public Jugador getJugadorActiu() { return jugadors.get(jugadorActiuIndex); }
+    public int getJugadorQuantity() { return jugadors.size(); }
 
     public void showOrdre() {
         for (Jugador jugador : jugadors) {
