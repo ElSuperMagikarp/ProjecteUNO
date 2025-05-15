@@ -41,7 +41,7 @@ public class Partida {
             ordreJugadors.crearJugador(nomJugador);
         }
         ordreJugadors.barrejarOrdre();
-        ordreJugadors.showOrdre();
+        UI.mostrarOrdreJugadors(ordreJugadors.getJugadors());
 
         repartirCartes();
 

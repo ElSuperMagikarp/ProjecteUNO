@@ -4,6 +4,7 @@ import uno.logica.*;
 import uno.logica.cartes.Carta;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class UI {
@@ -140,6 +141,16 @@ public class UI {
     public static void mostrarUltimaCarta(Pilo pilo) {
         System.out.println("ULTIMA CARTA DEL PILÓ");
         mostrarCarta(pilo.consultarCarta());
+        System.out.println();
+    }
+
+    public static void mostrarOrdreJugadors(LinkedList<Jugador> llistaJugadors) {
+        System.out.println("ORDRE DELS JUGADORS:");
+        for (int i=0; i<llistaJugadors.size(); i++) {
+            int numeroOrdre = i+1;
+            String nomJugador = llistaJugadors.get(i).getNom();
+            System.out.println(numeroOrdre + " - " + nomJugador);
+        }
         System.out.println();
     }
 
